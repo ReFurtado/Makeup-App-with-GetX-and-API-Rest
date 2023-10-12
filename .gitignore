@@ -1,0 +1,10 @@
+.dart_tool
+.idea
+.vscode
+build
+linux
+macos
+test
+web
+windows
+analysis_options.yaml

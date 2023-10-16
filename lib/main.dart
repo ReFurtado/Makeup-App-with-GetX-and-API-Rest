@@ -10,8 +10,8 @@ import 'data/repository/http_controller.dart';
 import 'data/repository/http_repository.dart';
 
 void main() {
-  final _httpRepository = HttpRepository();
-  Get.put(HttpController(_httpRepository));
+  final httpRepository = HttpRepository(); //Cria uma instância do repositório HTTP para gerenciar as requisições
+  Get.put(HttpController(httpRepository)); //Injeta o repositório no controlador HTTP para uso posterior
   runApp(const MyApp());
 }
 
@@ -25,10 +25,10 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
       getPages: [
-        GetPage(name: '/', page: () => WelcomePage()),
+        GetPage(name: '/', page: () => WelcomePage(controller: Get.find<HttpController>())),
         GetPage(
           name: '/home/', 
-          page: () => HomePage(),
+          page: () => HomePage(controller: Get.find<HttpController>()),
           binding: HttpBindings(),
         ),
         

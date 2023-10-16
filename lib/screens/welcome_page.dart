@@ -4,10 +4,12 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:video_player/video_player.dart';
 
+import '../data/repository/http_controller.dart';
 import 'home_page.dart';
 
 class WelcomePage extends StatefulWidget {
-  const WelcomePage({super.key});
+  final HttpController controller;
+  const WelcomePage({super.key, required this.controller});
 
   @override
   State<WelcomePage> createState() => _WelcomePageState();
@@ -69,7 +71,10 @@ class _WelcomePageState extends State<WelcomePage> {
             child: Column(
               children: [
                 ElevatedButton(
-                    onPressed: () => Get.to(() => HomePage()),
+                    onPressed: () => Get.to(() => HomePage(
+                      controller: Get.find<HttpController>(), 
+                      ),
+                    ),
                     style: FilledButton.styleFrom(
                       backgroundColor: Color(0xFFe01e26),
                       minimumSize: Size.fromHeight(50),

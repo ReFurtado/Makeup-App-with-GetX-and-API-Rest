@@ -9,7 +9,7 @@ import '../data/model/product_model.dart';
 
 class ProductPage extends StatefulWidget {
 
-   final ProductModel product;
+  final ProductModel product;
 
   const ProductPage({super.key, required this.product});
 

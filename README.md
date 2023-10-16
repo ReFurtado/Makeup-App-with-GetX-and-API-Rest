@@ -4,4 +4,4 @@ Projeto de um aplicativo de compras integrando a API Rest com o pacote GetX dent
 
 ## Imagem
 
-![Imagem do projeto](makeup.gif)
+![Imagem do projeto](makeup_app.gif)
